@@ -1,0 +1,18 @@
+services:
+  todos-bot:
+    build: .
+    container_name: todos-bot
+    restart: unless-stopped
+    # Mismo usuario que el dueño de ./data en el host, para que el bot pueda escribir miembros.json
+    user: "1000:1000"
+    env_file: .env
+    environment:
+      MIEMBROS_FILE: /data/miembros.json
+    volumes:
+      - ./data:/data
+    tmpfs:
+      - /tmp
+    read_only: true
+    mem_limit: 256m
+    security_opt:
+      - no-new-privileges:true

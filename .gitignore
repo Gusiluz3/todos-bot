@@ -1,0 +1,15 @@
+# Secretos: el token del bot nunca debe subirse
+.env
+
+# Datos reales de los grupos (IDs y nombres de usuarios)
+data/*
+!data/.gitkeep
+
+# Compilación de Maven
+target/
+
+# Archivos del IDE y de extensiones
+.vscode/
+.idea/
+*.iml
+.github/modernize/
